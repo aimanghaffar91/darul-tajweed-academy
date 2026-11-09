@@ -7,7 +7,6 @@ import {
   HeartHandshake,
   Laptop,
   Award,
-  ArrowRight,
 } from 'lucide-react'
 
 const features = [
@@ -58,10 +57,10 @@ const features = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="relative py-24 sm:py-32 bg-[#073B2A] text-[#FAF8F0] overflow-hidden">
+    <section id="why-us" className="relative py-24 sm:py-32 bg-[#F7F4EB] text-[#242820] overflow-hidden">
       {/* Background Watermark Pattern */}
-      <div className="absolute inset-0 bg-islamic-pattern-dark opacity-35 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#B89545]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#EDE5D4]/70 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -71,10 +70,10 @@ export default function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B3024] border border-[#B89545]/40 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/40 mb-4"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#D8BD74]" />
-            <span className="text-xs font-cinzel font-semibold tracking-widest text-[#FAF8F0] uppercase">
+            <Sparkles className="w-3.5 h-3.5 text-[#B89545]" />
+            <span className="text-xs font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase">
               OUR TEACHING PHILOSOPHY
             </span>
           </motion.div>
@@ -84,7 +83,7 @@ export default function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#FAF8F0] font-normal leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#073B2A] font-normal leading-tight"
           >
             Learning with Care, Patience and Purpose
           </motion.h2>
@@ -94,7 +93,7 @@ export default function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-[#FAF8F0]/80 font-sans font-light max-w-2xl mx-auto leading-relaxed"
+            className="mt-4 text-base sm:text-lg text-[#242820]/80 font-sans font-normal max-w-2xl mx-auto leading-relaxed"
           >
             Choosing the right learning environment makes a difference. At Darul Tajweed Academy, we focus on helping every learner develop confidence, improve their Quran recitation and understand the message of the Quran.
           </motion.p>
@@ -107,12 +106,12 @@ export default function WhyChooseUsSection() {
             className="mt-4 flex items-center justify-center gap-4"
           >
             <span className="h-[1px] w-12 bg-[#B89545]/40" />
-            <span className="text-[#D8BD74] font-serif text-sm">۞</span>
+            <span className="text-[#B89545] font-serif text-sm">۞</span>
             <span className="h-[1px] w-12 bg-[#B89545]/40" />
           </motion.div>
         </div>
 
-        {/* 6 Feature Cards Grid */}
+        {/* 6 Feature Cards Grid (Crisp White on Soft Warm Canvas) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => {
             const Icon = feature.icon
@@ -123,7 +122,7 @@ export default function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="group relative p-8 rounded-3xl bg-gradient-to-b from-[#0B3024]/90 to-[#073B2A]/90 border border-[#B89545]/30 hover:border-[#D8BD74] shadow-lg hover:shadow-[0_10px_35px_rgba(184,149,69,0.15)] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+                className="group relative p-8 rounded-3xl bg-white border border-[#B89545]/30 hover:border-[#B89545] shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar with Icon and Tag */}
@@ -132,26 +131,26 @@ export default function WhyChooseUsSection() {
                       <Icon className="w-6 h-6" />
                     </div>
 
-                    <span className="text-[10px] font-cinzel font-semibold tracking-widest text-[#B89545] uppercase px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                    <span className="text-[10px] font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase px-3 py-1 rounded-full bg-[#EDE5D4]/70 border border-[#B89545]/20">
                       {feature.tag}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FAF8F0] group-hover:text-[#D8BD74] transition-colors leading-tight">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#073B2A] group-hover:text-[#B89545] transition-colors leading-tight">
                     {feature.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 text-sm text-[#FAF8F0]/80 font-sans leading-relaxed">
+                  <p className="mt-3 text-sm text-[#242820]/80 font-sans leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Animated Gold Bottom Line */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#D8BD74]/70 font-cinzel">
+                <div className="mt-6 pt-4 border-t border-[#EDE5D4] flex items-center justify-between text-xs text-[#073B2A]/70 font-cinzel">
                   <span>Darul Tajweed Academy</span>
-                  <span className="text-[#B89545]">0{feature.id}</span>
+                  <span className="text-[#B89545] font-bold">0{feature.id}</span>
                 </div>
               </motion.div>
             )
@@ -161,4 +160,3 @@ export default function WhyChooseUsSection() {
     </section>
   )
 }
-

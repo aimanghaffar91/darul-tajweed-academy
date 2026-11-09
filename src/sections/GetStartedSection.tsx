@@ -39,7 +39,7 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
   }
 
   return (
-    <section id="get-started" className="relative py-24 sm:py-32 bg-[#FAF8F0] overflow-hidden">
+    <section id="get-started" className="relative py-24 sm:py-32 bg-[#FAF8F0] text-[#242820] overflow-hidden">
       {/* Background Motifs */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#EDE5D4]/60 rounded-full blur-3xl -z-10" />
@@ -52,7 +52,7 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/30 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/40 mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#B89545]" />
             <span className="text-xs font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase">
@@ -96,7 +96,7 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
         {/* 4-Step Timeline: Horizontal on Desktop, Vertical on Mobile */}
         <div className="relative">
           {/* Desktop Connecting Line */}
-          <div className="hidden lg:block absolute top-1/2 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-[#B89545]/30 via-[#B89545] to-[#B89545]/30 -translate-y-8 z-0" />
+          <div className="hidden lg:block absolute top-1/2 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-[#B89545]/20 via-[#B89545] to-[#B89545]/20 -translate-y-8 z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((item, idx) => {
@@ -108,10 +108,10 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: idx * 0.12 }}
-                  className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-[#B89545]/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center"
+                  className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-[#B89545]/30 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center"
                 >
                   {/* Step Number Badge */}
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#073B2A] to-[#0B3024] text-[#D8BD74] border-2 border-[#B89545] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#073B2A] to-[#0B3024] text-[#D8BD74] border-2 border-[#B89545] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform mb-5">
                     <Icon className="w-6 h-6 text-[#D8BD74]" />
                   </div>
 
@@ -132,7 +132,7 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
           </div>
         </div>
 
-        {/* CTA Card */}
+        {/* CTA Card (Refined Regal Emerald Card against light ivory) */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -165,4 +165,3 @@ export default function GetStartedSection({ onContactClick }: GetStartedSectionP
     </section>
   )
 }
-

@@ -3,7 +3,7 @@ import { Heart, Sparkles, BookOpen, Compass, Award } from 'lucide-react'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-[#FAF8F0] overflow-hidden">
+    <section id="about" className="relative py-24 sm:py-32 bg-[#FAF8F0] text-[#242820] overflow-hidden">
       {/* Decorative background geometric accents */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#EDE5D4]/60 rounded-full blur-3xl -z-10" />
@@ -17,7 +17,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/30 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/40 mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#B89545]" />
             <span className="text-xs font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase">
@@ -64,13 +64,13 @@ export default function AboutSection() {
                 <img
                   src="/images/quran-pages.jpg"
                   alt="Holy Quran Pages"
-                  className="w-full h-[440px] sm:h-[500px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[450px] sm:h-[520px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#042318]/80 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#042318]/85 via-transparent to-black/20" />
 
                 {/* Floating Calligraphy Quote inside image */}
                 <div className="absolute bottom-6 left-6 right-6 text-center text-[#FAF8F0]">
-                  <p className="font-arabic text-xl sm:text-2xl text-[#D8BD74] mb-1">
+                  <p className="font-arabic text-2xl sm:text-3xl text-[#D8BD74] mb-1 drop-shadow">
                     وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا
                   </p>
                   <p className="text-xs font-serif italic text-[#FAF8F0]/80">
@@ -80,7 +80,7 @@ export default function AboutSection() {
               </div>
 
               {/* Decorative Secondary Overlay Image */}
-              <div className="hidden sm:block absolute -bottom-8 -right-6 w-44 h-44 rounded-2xl overflow-hidden border-4 border-[#FAF8F0] shadow-xl">
+              <div className="hidden sm:block absolute -bottom-8 -right-6 w-48 h-48 rounded-2xl overflow-hidden border-4 border-[#FAF8F0] shadow-xl">
                 <img
                   src="/images/mosque-interior.jpg"
                   alt="Islamic Mosque Architecture"
@@ -113,8 +113,8 @@ export default function AboutSection() {
             className="lg:col-span-7 flex flex-col justify-center"
           >
             {/* Exact Introduction Paragraphs */}
-            <div className="space-y-6 text-[#242820]/85 text-base sm:text-lg leading-relaxed font-sans">
-              <p className="first-letter:text-4xl first-letter:font-serif first-letter:text-[#B89545] first-letter:mr-2 first-letter:float-left">
+            <div className="space-y-6 text-[#242820]/90 text-base sm:text-lg leading-relaxed font-sans">
+              <p className="first-letter:text-5xl first-letter:font-serif first-letter:text-[#B89545] first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-none">
                 At Darul Tajweed Academy, our aim is to make Quran learning meaningful, accessible and enjoyable. We believe that learning the Quran is not only about reading its words but also about understanding its message and applying its teachings in everyday life.
               </p>
 
@@ -129,8 +129,8 @@ export default function AboutSection() {
 
             {/* Core Values Badge Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-[#B89545]/20">
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 border border-[#B89545]/15 shadow-sm">
-                <div className="p-2 rounded-lg bg-[#073B2A] text-[#D8BD74]">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-[#B89545]/20 shadow-sm">
+                <div className="p-2.5 rounded-xl bg-[#073B2A] text-[#D8BD74]">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div>
@@ -143,8 +143,8 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 border border-[#B89545]/15 shadow-sm">
-                <div className="p-2 rounded-lg bg-[#073B2A] text-[#D8BD74]">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-[#B89545]/20 shadow-sm">
+                <div className="p-2.5 rounded-xl bg-[#073B2A] text-[#D8BD74]">
                   <Compass className="w-4 h-4" />
                 </div>
                 <div>
@@ -157,8 +157,8 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-white/70 border border-[#B89545]/15 shadow-sm">
-                <div className="p-2 rounded-lg bg-[#073B2A] text-[#D8BD74]">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-[#B89545]/20 shadow-sm">
+                <div className="p-2.5 rounded-xl bg-[#073B2A] text-[#D8BD74]">
                   <Heart className="w-4 h-4" />
                 </div>
                 <div>
@@ -192,4 +192,3 @@ export default function AboutSection() {
     </section>
   )
 }
-

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sparkles, Plus, Minus, HelpCircle } from 'lucide-react'
+import { Plus, Minus, HelpCircle } from 'lucide-react'
 
 interface FAQItem {
   question: string
@@ -46,7 +46,7 @@ export default function FaqSection() {
   }
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32 bg-[#FAF8F0] overflow-hidden">
+    <section id="faq" className="relative py-24 sm:py-32 bg-[#F7F4EB] text-[#242820] overflow-hidden">
       {/* Background Watermark */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-[#EDE5D4]/70 rounded-full blur-3xl -z-10" />
@@ -59,7 +59,7 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/30 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/40 mb-4"
           >
             <HelpCircle className="w-3.5 h-3.5 text-[#B89545]" />
             <span className="text-xs font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase">
@@ -105,7 +105,7 @@ export default function FaqSection() {
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
                     ? 'bg-white border-[#B89545] shadow-lg'
-                    : 'bg-white/80 border-[#B89545]/20 hover:border-[#B89545]/50 shadow-sm'
+                    : 'bg-white border-[#B89545]/20 hover:border-[#B89545]/50 shadow-sm'
                 }`}
               >
                 <button
@@ -114,7 +114,7 @@ export default function FaqSection() {
                   className="w-full py-5 px-6 sm:px-8 text-left flex items-center justify-between gap-4 focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-serif text-lg sm:text-xl font-medium text-[#073B2A] leading-snug">
+                  <span className="font-serif text-lg sm:text-xl font-bold text-[#073B2A] leading-snug">
                     {faq.question}
                   </span>
                   <div
@@ -150,4 +150,3 @@ export default function FaqSection() {
     </section>
   )
 }
-

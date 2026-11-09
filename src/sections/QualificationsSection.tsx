@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Award, Sparkles, ZoomIn, CheckCircle2, ShieldCheck, ExternalLink } from 'lucide-react'
+import { Award, ZoomIn, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react'
 import CertificateLightbox, { type CertificateData } from '../components/CertificateLightbox'
 
 const certificates: CertificateData[] = [
@@ -36,8 +36,8 @@ export default function QualificationsSection() {
   }
 
   return (
-    <section id="qualifications" className="relative py-24 sm:py-32 bg-[#FAF8F0] overflow-hidden">
-      {/* Background Decorative Watermark */}
+    <section id="qualifications" className="relative py-24 sm:py-32 bg-[#FAF8F0] text-[#242820] overflow-hidden">
+      {/* Background Subtle Watermark */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#EDE5D4]/70 rounded-full blur-3xl -z-10" />
 
@@ -49,7 +49,7 @@ export default function QualificationsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/30 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EDE5D4] border border-[#B89545]/40 mb-4"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-[#B89545]" />
             <span className="text-xs font-cinzel font-semibold tracking-widest text-[#073B2A] uppercase">
@@ -99,12 +99,12 @@ export default function QualificationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
-              className="group relative rounded-3xl bg-white border-2 border-[#B89545]/30 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between"
+              className="group relative rounded-3xl bg-white border-2 border-[#B89545]/30 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between"
             >
               {/* Top Framed Image View */}
               <div
                 onClick={() => openLightbox(index)}
-                className="relative p-6 sm:p-8 bg-gradient-to-b from-[#EDE5D4]/60 to-white cursor-pointer overflow-hidden"
+                className="relative p-6 sm:p-8 bg-gradient-to-b from-[#EDE5D4]/60 to-white cursor-pointer overflow-hidden select-none"
               >
                 {/* Certificate Frame with Gold Border & Corner Accents */}
                 <div className="relative rounded-xl overflow-hidden border-2 border-[#B89545]/60 shadow-md bg-white group-hover:border-[#D4AF37] transition-all">
@@ -120,7 +120,7 @@ export default function QualificationsSection() {
                       <ZoomIn className="w-6 h-6" />
                     </div>
                     <span className="text-xs font-cinzel font-semibold tracking-wider text-[#FAF8F0]">
-                      Click to View Original Certificate
+                      Click to Enlarge & Inspect Certificate
                     </span>
                   </div>
 
@@ -130,16 +130,20 @@ export default function QualificationsSection() {
                     <span>Achievement: {cert.achievement}</span>
                   </div>
                 </div>
+
+                {/* Corner Decorative Star */}
+                <div className="absolute top-2 right-2 text-xs text-[#B89545]/50 select-none">۞</div>
+                <div className="absolute top-2 left-2 text-xs text-[#B89545]/50 select-none">۞</div>
               </div>
 
               {/* Certificate Details Card */}
               <div className="p-6 sm:p-8 border-t border-[#B89545]/20 bg-white flex-1 flex flex-col justify-between space-y-6">
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-cinzel font-semibold tracking-widest text-[#B89545] uppercase">
+                    <span className="text-xs font-cinzel font-bold tracking-widest text-[#B89545] uppercase">
                       CERTIFICATE COURSE
                     </span>
-                    <span className="font-arabic text-sm text-[#073B2A]">
+                    <span className="font-arabic text-sm text-[#073B2A] font-semibold">
                       {cert.arabicSubtitle}
                     </span>
                   </div>
@@ -150,18 +154,20 @@ export default function QualificationsSection() {
 
                   <div className="mt-4 space-y-2 text-sm text-[#242820]/80 font-sans">
                     <div className="flex items-start gap-2">
-                      <span className="text-[#B89545] font-bold">Institution:</span>
+                      <span className="text-[#073B2A] font-bold">Institution:</span>
                       <span>{cert.institution}</span>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="text-[#B89545] font-bold">Session:</span>
+                      <span className="text-[#073B2A] font-bold">Session:</span>
                       <span>{cert.session}</span>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <span className="text-[#B89545] font-bold">Result:</span>
-                      <span className="font-semibold text-[#073B2A]">{cert.achievement} Distinction</span>
+                      <span className="text-[#073B2A] font-bold">Distinction Score:</span>
+                      <span className="font-bold text-[#073B2A] bg-[#EDE5D4]/70 px-2.5 py-0.5 rounded-md border border-[#B89545]/30">
+                        {cert.achievement}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -170,10 +176,10 @@ export default function QualificationsSection() {
                 <div className="pt-4 border-t border-[#EDE5D4] flex items-center justify-between">
                   <button
                     onClick={() => openLightbox(index)}
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#073B2A] hover:text-[#B89545] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#073B2A] hover:text-[#B89545] transition-colors font-cinzel uppercase tracking-wider"
                   >
                     <ZoomIn className="w-4 h-4 text-[#B89545]" />
-                    <span>Enlarge & Inspect Certificate</span>
+                    <span>View Original Award</span>
                   </button>
 
                   <span className="text-xs font-serif text-[#242820]/60 italic">
@@ -193,7 +199,7 @@ export default function QualificationsSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#EDE5D4]/70 border border-[#B89545]/30 text-xs sm:text-sm text-[#073B2A] font-sans font-medium">
+          <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#EDE5D4]/70 border border-[#B89545]/40 text-xs sm:text-sm text-[#073B2A] font-sans font-medium shadow-sm">
             <CheckCircle2 className="w-4 h-4 text-[#B89545]" />
             <span>Certificates awarded by Al-Huda International Welfare Foundation.</span>
           </div>
