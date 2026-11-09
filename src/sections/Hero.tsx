@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { BookOpen, Compass, Sparkles, Play, Pause, ChevronDown } from 'lucide-react'
+import { BookOpen, Compass, Sparkles, Play, Pause } from 'lucide-react'
 
 interface HeroProps {
   onExploreCourses?: () => void

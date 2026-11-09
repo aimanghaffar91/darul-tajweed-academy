@@ -1,4 +1,4 @@
-import { ArrowUp, Sparkles, MessageCircle, Mail } from 'lucide-react'
+import { ArrowUp, MessageCircle, Mail } from 'lucide-react'
 
 export default function Footer() {
   const scrollToTop = () => {

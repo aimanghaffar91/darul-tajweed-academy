@@ -9,11 +9,7 @@ import GetStartedSection from '../sections/GetStartedSection'
 import FaqSection from '../sections/FaqSection'
 import ContactSection from '../sections/ContactSection'
 
-interface HomeProps {
-  onEnquireCourse?: (courseTitle: string) => void
-}
-
-export default function Home({ onEnquireCourse }: HomeProps) {
+export default function Home() {
   const [selectedCourse, setSelectedCourse] = useState<string>('Quran with Tajweed')
 
   const handleSelectCourseForContact = (courseTitle: string) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Award, ZoomIn, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react'
+import { Award, ZoomIn, CheckCircle2, ShieldCheck } from 'lucide-react'
 import CertificateLightbox, { type CertificateData } from '../components/CertificateLightbox'
 
 const certificates: CertificateData[] = [

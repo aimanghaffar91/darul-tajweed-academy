@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, BookOpen, Sparkles, CheckCircle2, MessageCircle, ArrowRight, User } from 'lucide-react'
+import { Award, BookOpen, Sparkles, MessageCircle, ArrowRight, User } from 'lucide-react'
 
 interface TeacherSectionProps {
   onContactTeacher?: () => void
@@ -107,16 +107,7 @@ export default function TeacherSection({ onContactTeacher }: TeacherSectionProps
                         </div>
                       </div>
 
-                      {/* Verified Badge */}
-                      <div className="absolute -bottom-1 right-2 bg-[#B89545] text-[#073B2A] p-1.5 rounded-full shadow-lg border border-[#FAF8F0]">
-                        <CheckCircle2 className="w-4 h-4" />
-                      </div>
-                    </div>
 
-                    <div className="mt-4 px-4 py-1.5 rounded-xl bg-black/30 border border-white/10 backdrop-blur-sm">
-                      <p className="text-[11px] text-[#FAF8F0]/80 font-sans italic">
-                        Teacher photograph placeholder — ready for your photo
-                      </p>
                     </div>
                   </div>
 

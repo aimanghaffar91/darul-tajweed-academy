@@ -80,14 +80,14 @@ export default function AboutSection() {
               </div>
 
               {/* Decorative Secondary Overlay Image */}
-              <div className="hidden sm:block absolute -bottom-8 -right-6 w-48 h-48 rounded-2xl overflow-hidden border-4 border-[#FAF8F0] shadow-xl">
+              {/* <div className="hidden sm:block absolute -bottom-8 -right-6 w-48 h-48 rounded-2xl overflow-hidden border-4 border-[#FAF8F0] shadow-xl">
                 <img
                   src="/images/mosque-interior.jpg"
                   alt="Islamic Mosque Architecture"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-[#073B2A]/25" />
-              </div>
+              </div> */}
 
               {/* Experience Stamp */}
               <div className="absolute -top-4 -left-4 sm:top-6 sm:-left-8 bg-[#073B2A] text-[#FAF8F0] p-4 rounded-2xl border border-[#B89545]/50 shadow-xl flex items-center gap-3">

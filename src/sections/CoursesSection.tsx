@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { BookOpen, Sparkles, ArrowRight, Check, Eye, Clock, Users, GraduationCap, Compass, Heart } from 'lucide-react'
+import { BookOpen, Sparkles, ArrowRight, Check, Eye, Clock, GraduationCap, Compass, Heart } from 'lucide-react'
 import CourseModal, { type CourseData } from '../components/CourseModal'
 
 interface CoursesSectionProps {
