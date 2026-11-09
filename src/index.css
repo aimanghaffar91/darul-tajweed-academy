@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 43% 96%; /* #FAF8F0 Warm Ivory */
+    --foreground: 90 11% 14%; /* #242820 Charcoal */
+    --card: 0 0% 100%;
+    --card-foreground: 90 11% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 90 11% 14%;
+    --primary: 161 79% 13%; /* #073B2A Deep Emerald */
+    --primary-foreground: 44 43% 96%;
+    --secondary: 42 47% 50%; /* #B89545 Antique Gold */
+    --secondary-foreground: 161 79% 13%;
+    --muted: 40 33% 88%; /* #EDE5D4 Soft Beige */
+    --muted-foreground: 90 8% 30%;
+    --accent: 163 60% 11%; /* #0B3024 Forest Green */
+    --accent-foreground: 44 43% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 42 35% 82%;
+    --input: 42 35% 85%;
+    --ring: 42 47% 50%;
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF8F0;
+    color: #242820;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Headings typography */
+  h1, h2, h3, .font-heading {
+    font-family: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-brand {
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    direction: rtl;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B3024;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B89545;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D8BD74;
+  }
+}
+
+@layer utilities {
+  /* Subtle Islamic star geometric pattern watermark */
+  .bg-islamic-pattern {
+    background-image: radial-gradient(rgba(184, 149, 69, 0.08) 1px, transparent 0),
+                      radial-gradient(rgba(184, 149, 69, 0.04) 1px, transparent 0);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+  }
+
+  .bg-islamic-pattern-dark {
+    background-image: radial-gradient(rgba(184, 149, 69, 0.12) 1px, transparent 0),
+                      radial-gradient(rgba(184, 149, 69, 0.06) 1px, transparent 0);
+    background-size: 36px 36px;
+    background-position: 0 0, 18px 18px;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #DFC07A 0%, #B89545 50%, #8C6E2D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-border {
+    border: 1px solid rgba(184, 149, 69, 0.3);
+  }
+
+  .gold-border-glow {
+    border: 1px solid rgba(184, 149, 69, 0.45);
+    box-shadow: 0 0 15px rgba(184, 149, 69, 0.15);
+  }
+
+  /* Traditional Islamic Arch shape clip-paths and borders */
+  .arch-top {
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+  }
+
+  .arch-frame {
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
