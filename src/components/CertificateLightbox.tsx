@@ -154,15 +154,22 @@ export default function CertificateLightbox({
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* High-Resolution Certificate Image */}
+            {/* High-Resolution Certificate Image with Interactive Pan & Zoom */}
             <div className="relative overflow-hidden flex items-center justify-center max-w-full max-h-full">
               <motion.img
                 key={cert.id}
                 src={cert.image}
                 alt={`${cert.title} - ${cert.institution}`}
                 animate={{ scale: zoomLevel }}
-                transition={{ duration: 0.2 }}
-                className="max-h-[60vh] sm:max-h-[68vh] w-auto object-contain rounded-lg shadow-2xl border-2 border-[#B89545]/40"
+                drag={zoomLevel > 1}
+                dragConstraints={{ left: -350, right: 350, top: -250, bottom: 250 }}
+                dragElastic={0.08}
+                onDoubleClick={() => setZoomLevel((prev) => (prev === 1 ? 1.8 : 1))}
+                transition={{ duration: 0.25 }}
+                className={`max-h-[60vh] sm:max-h-[68vh] w-auto object-contain rounded-lg shadow-2xl border-2 border-[#B89545]/40 transition-shadow ${
+                  zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-zoom-in'
+                }`}
+                title={zoomLevel > 1 ? 'Drag to pan around certificate' : 'Double click or use buttons to zoom'}
               />
             </div>
 

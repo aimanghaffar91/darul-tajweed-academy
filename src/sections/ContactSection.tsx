@@ -184,7 +184,7 @@ export default function ContactSection({ preselectedCourse }: ContactSectionProp
 
                 {/* Email */}
                 <a
-                  href="mailto:darultajweedacademy@gmail.com"
+                  href="mailto:info.darultajweedofficial@gmail.com"
                   className="p-5 rounded-2xl bg-white border border-[#B89545]/30 hover:border-[#073B2A] transition-all flex items-center justify-between group shadow-sm hover:shadow-md"
                 >
                   <div className="flex items-center gap-4">

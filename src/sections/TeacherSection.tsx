@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, BookOpen, Sparkles, MessageCircle, ArrowRight, User } from 'lucide-react'
+import { Award, BookOpen, Sparkles, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react'
 
 interface TeacherSectionProps {
   onContactTeacher?: () => void
@@ -95,19 +95,30 @@ export default function TeacherSection({ onContactTeacher }: TeacherSectionProps
                     </span>
                   </div>
 
-                  {/* Tasteful Teacher Portrait Placeholder Frame */}
+                  {/* Academy Crest & Educator Seal Medallion */}
                   <div className="relative z-10 my-auto flex flex-col items-center">
-                    <div className="relative group cursor-pointer">
-                      <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full border-2 border-dashed border-[#B89545] p-2 flex items-center justify-center bg-[#073B2A]/90 backdrop-blur-sm shadow-inner transition-colors hover:border-[#D8BD74]">
-                        <div className="w-full h-full rounded-full bg-gradient-to-b from-[#0B3024] to-[#042318] flex flex-col items-center justify-center text-[#D8BD74]">
-                          <User className="w-12 h-12 text-[#B89545]/70" />
-                          <span className="text-[11px] font-sans font-medium text-[#FAF8F0]/85 mt-1">
-                            Aiman Ghaffar
-                          </span>
+                    <div className="relative group">
+                      {/* Ambient Golden Halo Glow */}
+                      <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-[#D4AF37]/30 to-[#B89545]/20 blur-md pointer-events-none" />
+
+                      {/* Gilded Double-Gold Arch Medallion */}
+                      <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-2 bg-gradient-to-b from-[#D4AF37] via-[#B89545] to-[#042318] shadow-[0_12px_35px_rgba(0,0,0,0.55),0_0_30px_rgba(184,149,69,0.35)] border-2 border-[#FAF8F0]/30 transition-transform duration-500 group-hover:scale-105">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-[#FAF8F0] p-1.5 flex items-center justify-center shadow-inner">
+                          <img
+                            src="/images/darul-tajweed-logo.jpg"
+                            alt="Darul Tajweed Academy Official Crest - Teacher Aiman Ghaffar"
+                            className="w-full h-full object-cover rounded-full"
+                          />
                         </div>
                       </div>
 
-
+                      {/* Verified Instructor Badge Pill */}
+                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[#073B2A] border border-[#B89545] shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+                        <ShieldCheck className="w-3.5 h-3.5 text-[#D8BD74]" />
+                        <span className="text-[10px] font-cinzel font-bold text-[#D8BD74] uppercase tracking-wider">
+                          Certified Educator
+                        </span>
+                      </div>
                     </div>
                   </div>
 

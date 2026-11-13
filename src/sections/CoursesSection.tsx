@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { BookOpen, Sparkles, ArrowRight, Check, Eye, Clock, GraduationCap, Compass, Heart } from 'lucide-react'
+import { Sparkles, ArrowRight, Check, Eye, Clock, ShieldCheck } from 'lucide-react'
 import CourseModal, { type CourseData } from '../components/CourseModal'
 
 interface CoursesSectionProps {
@@ -10,12 +10,14 @@ interface CoursesSectionProps {
 interface ExtendedCourseData extends CourseData {
   badge: string
   level: string
-  icon: typeof BookOpen
+  romanIndex: string
+  keyFocus: string
 }
 
 const courses: ExtendedCourseData[] = [
   {
     id: 'tajweed',
+    romanIndex: 'I',
     title: 'Quran with Tajweed',
     arabicTitle: 'تَجْوِيدُ الْقُرْآن',
     tagline: 'Makharij, Pronunciation Mastery & Melodic Recitation',
@@ -24,7 +26,7 @@ const courses: ExtendedCourseData[] = [
     image: '/images/tajweed-art.jpg',
     badge: 'RECITATION MASTERY',
     level: 'Beginner to Advanced',
-    icon: BookOpen,
+    keyFocus: 'Makharij al-Huroof & Phonetics',
     curriculum: [
       'Correct points of articulation (Makharij al-Huroof)',
       'Characteristics of letters (Sifaat al-Huroof)',
@@ -38,6 +40,7 @@ const courses: ExtendedCourseData[] = [
   },
   {
     id: 'tafseer',
+    romanIndex: 'II',
     title: 'Quran Tafseer',
     arabicTitle: 'تَفْسِيرُ الْقُرْآن',
     tagline: 'Deep Meanings, Contextual Wisdom & Divine Guidance',
@@ -46,7 +49,7 @@ const courses: ExtendedCourseData[] = [
     image: '/images/quran-pages.jpg',
     badge: 'VERSE COMPREHENSION',
     level: 'All Dedicated Learners',
-    icon: Compass,
+    keyFocus: 'Asbab al-Nuzul & Deep Wisdom',
     curriculum: [
       'Verse-by-verse comprehensive explanation',
       'Causes and historical occasions of revelation (Asbab al-Nuzul)',
@@ -60,6 +63,7 @@ const courses: ExtendedCourseData[] = [
   },
   {
     id: 'hadith',
+    romanIndex: 'III',
     title: 'Hadith & Sunnah Studies',
     arabicTitle: 'حَدِيث وَسُنَّة',
     tagline: 'Living the Prophetic Way • Manners & Daily Character',
@@ -68,7 +72,7 @@ const courses: ExtendedCourseData[] = [
     image: '/images/calligraphy.jpg',
     badge: 'PROPHETIC CHARACTER',
     level: 'Youth & Adults',
-    icon: Heart,
+    keyFocus: 'Adab, Sunnah & Moral Character',
     curriculum: [
       'Study of authentic Hadith collections (Riyad al-Salihin & Forty Hadith)',
       'Core manners (Adab) and ethical character (Akhlaq) of the Prophet ﷺ',
@@ -82,15 +86,16 @@ const courses: ExtendedCourseData[] = [
   },
   {
     id: 'fahm-ul-quran',
+    romanIndex: 'IV',
     title: 'Fahm-ul-Quran',
     arabicTitle: 'فَهْمُ الْقُرْآن',
     tagline: 'Understanding Quranic Language, Themes & Core Messages',
     description:
       'Explore the meanings and teachings of the Holy Quran and develop a better understanding of its guidance for everyday life.',
     image: '/images/student-reading.jpg',
-    badge: 'DIRECT UNDERSTANDING',
+    badge: 'DIRECT COMPREHENSION',
     level: 'Intermediate & Advanced',
-    icon: GraduationCap,
+    keyFocus: 'Quranic Vocabulary & Grammar',
     curriculum: [
       'Frequent Quranic vocabulary and key root words',
       'Understanding grammatical structures of common verses',
@@ -104,6 +109,7 @@ const courses: ExtendedCourseData[] = [
   },
   {
     id: 'asma-ul-husna',
+    romanIndex: 'V',
     title: 'Asma-ul-Husna',
     arabicTitle: 'أَسْمَاءُ اللَّهِ الْحُسْنَى',
     tagline: 'Knowing Allah Through His Most Beautiful Names',
@@ -112,7 +118,7 @@ const courses: ExtendedCourseData[] = [
     image: '/images/mosque-interior.jpg',
     badge: 'DIVINE NAMES & ATTRIBUTES',
     level: 'Open to All Seekers',
-    icon: Sparkles,
+    keyFocus: '99 Names, Du’a & Spiritual Reflection',
     curriculum: [
       'In-depth study of the 99 Beautiful Names of Allah',
       'Linguistic origins and theological distinctions between Divine Attributes',
@@ -147,8 +153,8 @@ export default function CoursesSection({ onSelectCourseForContact }: CoursesSect
   }
 
   return (
-    <section id="courses" className="relative py-24 sm:py-32 bg-[#F7F4EB] text-[#242820] overflow-hidden">
-      {/* Background Watermark */}
+    <section id="courses" className="relative py-28 sm:py-36 bg-[#F7F4EB] text-[#242820] overflow-hidden">
+      {/* Background Subtle Watermark */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-30 pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#EDE5D4]/70 rounded-full blur-3xl -z-10" />
 
@@ -213,31 +219,37 @@ export default function CoursesSection({ onSelectCourseForContact }: CoursesSect
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className={`group relative rounded-3xl bg-white border border-[#B89545]/30 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between ${isFullWidthMobile}`}
+                className={`group relative rounded-[28px] bg-white border border-[#B89545]/30 overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(184,149,69,0.18)] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between ${isFullWidthMobile}`}
               >
-                {/* Top Image Container with zoom interaction */}
-                <div className="relative h-60 w-full overflow-hidden bg-[#073B2A]">
+                {/* Top Image Container with Architectural Arch Mask */}
+                <div className="relative h-64 w-full overflow-hidden bg-[#073B2A]">
                   <img
                     src={course.image}
                     alt={course.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#042318]/95 via-[#073B2A]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#042318]/95 via-[#073B2A]/45 to-transparent" />
 
-                  {/* Top Bar on Image: Badge & Arabic Name */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-[#042318]/80 backdrop-blur-md border border-[#B89545]/40 text-[10px] font-cinzel font-bold text-[#D8BD74] uppercase tracking-wider">
-                      {course.badge}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-[#042318]/80 backdrop-blur-md border border-[#B89545]/40 font-arabic text-xs text-[#D8BD74]">
+                  {/* Top Bar on Image: Roman Numeral Seal & Arabic Calligraphy */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                    <div className="flex items-center gap-2">
+                      <span className="w-7 h-7 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B89545] text-[#073B2A] font-cinzel font-bold text-xs flex items-center justify-center shadow-md">
+                        {course.romanIndex}
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-[#042318]/85 backdrop-blur-md border border-[#B89545]/40 text-[10px] font-cinzel font-bold text-[#D8BD74] uppercase tracking-wider">
+                        {course.badge}
+                      </span>
+                    </div>
+
+                    <span className="px-3 py-1 rounded-full bg-[#042318]/85 backdrop-blur-md border border-[#B89545]/40 font-arabic text-xs text-[#D8BD74]">
                       {course.arabicTitle}
                     </span>
                   </div>
 
                   {/* Bottom Image Overlay Title & Level */}
-                  <div className="absolute bottom-4 left-5 right-5 text-[#FAF8F0]">
+                  <div className="absolute bottom-4 left-5 right-5 text-[#FAF8F0] z-10">
                     <div className="flex items-center gap-2 text-[11px] text-[#D8BD74] font-cinzel tracking-wider uppercase mb-1">
-                      <Clock className="w-3 h-3 text-[#D8BD74]" />
+                      <Clock className="w-3.5 h-3.5 text-[#D8BD74]" />
                       <span>{course.level}</span>
                     </div>
                     <h3 className="font-serif text-2xl font-bold tracking-tight text-[#FAF8F0] group-hover:text-[#D8BD74] transition-colors leading-tight">
@@ -250,8 +262,14 @@ export default function CoursesSection({ onSelectCourseForContact }: CoursesSect
                 <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#B89545]/40 to-transparent group-hover:via-[#B89545] transition-all" />
 
                 {/* Card Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
                   <div>
+                    {/* Core Focus Tag Pill */}
+                    <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#FAF8F0] border border-[#B89545]/25 text-[11px] font-sans text-[#073B2A] font-medium">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#B89545]" />
+                      <span>{course.keyFocus}</span>
+                    </div>
+
                     <p className="text-sm text-[#242820]/80 font-sans leading-relaxed">
                       {course.description}
                     </p>
@@ -259,7 +277,7 @@ export default function CoursesSection({ onSelectCourseForContact }: CoursesSect
                     {/* Features checklist */}
                     <div className="mt-4 pt-4 border-t border-[#EDE5D4] space-y-2">
                       {course.curriculum.slice(0, 3).map((feat, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-[#242820]/80">
+                        <div key={i} className="flex items-start gap-2 text-xs text-[#242820]/85">
                           <Check className="w-3.5 h-3.5 text-[#B89545] shrink-0 mt-0.5" />
                           <span className="line-clamp-1">{feat}</span>
                         </div>
@@ -274,7 +292,7 @@ export default function CoursesSection({ onSelectCourseForContact }: CoursesSect
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#073B2A] hover:text-[#B89545] transition-colors py-2 font-cinzel uppercase tracking-wider"
                     >
                       <Eye className="w-3.5 h-3.5 text-[#B89545]" />
-                      <span>Learn More</span>
+                      <span>Syllabus Details</span>
                     </button>
 
                     <button
