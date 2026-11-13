@@ -46,7 +46,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@darultajweed.com',
+      value: 'info.darultajweedofficial@gmail.com',
       href: 'mailto:info@darultajweed.com',
       color: 'bg-blue-50',
       iconColor: 'text-blue-600',

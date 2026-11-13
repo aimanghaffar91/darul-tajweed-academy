@@ -127,7 +127,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:darultajweedacademy@gmail.com"
+              href="mailto:info.darultajweedofficial@gmail.com"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#073B2A] hover:bg-[#0B3024] border border-[#B89545]/30 text-xs text-[#FAF8F0] transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-[#D8BD74]" />

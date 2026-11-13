@@ -50,10 +50,10 @@ export default function ContactSection({ preselectedCourse }: ContactSectionProp
 
     const text = encodeURIComponent(
       `Assalamu Alaikum Darul Tajweed Academy!\n\n` +
-        `• Name: ${name || 'Prospective Student'}\n` +
-        `• Email: ${email || 'Not provided'}\n` +
-        `• Course of Interest: ${course}\n` +
-        `• Message: ${message || 'I would like to enquire about class schedules and enrolment.'}`
+      `• Name: ${name || 'Prospective Student'}\n` +
+      `• Email: ${email || 'Not provided'}\n` +
+      `• Course of Interest: ${course}\n` +
+      `• Message: ${message || 'I would like to enquire about class schedules and enrolment.'}`
     )
 
     window.open(`https://wa.me/923185690089?text=${text}`, '_blank')
@@ -67,14 +67,14 @@ export default function ContactSection({ preselectedCourse }: ContactSectionProp
     const subject = encodeURIComponent(`Darul Tajweed Academy Enquiry - ${course} [${name || 'Student'}]`)
     const body = encodeURIComponent(
       `Assalamu Alaikum Teacher Aiman,\n\n` +
-        `My Name: ${name}\n` +
-        `My Email: ${email}\n` +
-        `Course of Interest: ${course}\n\n` +
-        `Message:\n${message}\n\n` +
-        `Looking forward to hearing from you.`
+      `My Name: ${name}\n` +
+      `My Email: ${email}\n` +
+      `Course of Interest: ${course}\n\n` +
+      `Message:\n${message}\n\n` +
+      `Looking forward to hearing from you.`
     )
 
-    window.location.href = `mailto:darultajweedacademy@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:info.darultajweedofficial@gmail.com?subject=${subject}&body=${body}`
     setSubmittedType('email')
   }
 
@@ -196,7 +196,7 @@ export default function ContactSection({ preselectedCourse }: ContactSectionProp
                         Official Email
                       </span>
                       <span className="font-sans text-sm sm:text-base font-semibold text-[#073B2A]">
-                        darultajweedacademy@gmail.com
+                        info.darultajweedofficial@gmail.com
                       </span>
                     </div>
                   </div>
