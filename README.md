@@ -7,15 +7,14 @@ A luxury Islamic editorial and cinematic one-page website designed and built for
 
 ## 🌟 Features & Highlights
 
-- **Cinematic Full-Screen Video Hero**:
-  - Real, looping cinematic background video (`/videos/hero-quran.mp4`) with smooth emerald color grading.
-  - Automatic fallback poster image for low-bandwidth or reduced-motion environments.
-  - Subtle animated scroll indicator and genuine Arabic Bismillah calligraphy.
+- **Cinematic Hero & 3D Quran Page-Turner ("The Illuminated Mushaf")**:
+  - Serene sanctuary backdrop with warm sunlight beam and authentic Bismillah calligraphy (`بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ`).
+  - Interactive 3D Quran book resting on a handcrafted walnut Rehal bookstand with 3 authentic page spreads (Surah Al-Fatiha, Surah Al-Alaq, Surah Al-Muzzammil) with traditional stop signs (`۝`), English translations, theological commentaries, 7-second auto-turn timer, and manual controls.
 - **Brand Identity & Crest**:
-  - Uses the official uploaded Darul Tajweed Academy circular crest and branding.
+  - Displays the official Darul Tajweed Academy crest inside a double-gold medallion with a "Certified Educator" distinction badge.
 - **Meet Your Quran Teacher (Aiman Ghaffar)**:
   - Exact editorial copy detailing her 2 years of online teaching experience, Tajweed mastery, and Al-Huda academic background.
-  - Tasteful Islamic arch portrait placeholder ready for Aiman's personal photograph.
+  - Gilded arch showcase highlighting the academy crest and verified credentials.
 - **5 Comprehensive Course Programs**:
   1. *Quran with Tajweed* (Makharij, Pronunciation Mastery & Melodic Recitation)
   2. *Quran Tafseer* (Deep Meanings, Contextual Wisdom & Divine Guidance)
@@ -86,9 +85,9 @@ A luxury Islamic editorial and cinematic one-page website designed and built for
 
 ## 📷 Customization Note (Adding Teacher Photograph)
 
-To replace the teacher portrait placeholder with Aiman Ghaffar's actual photograph:
-1. Copy the photo to `public/images/aiman-ghaffar.jpg`.
-2. In `src/sections/TeacherSection.tsx`, replace the placeholder `<User className="..." />` block with:
+The teacher section currently features the official Darul Tajweed Academy crest inside a gilded double-gold medallion. If teacher Aiman Ghaffar wishes to display her photograph in the future:
+1. Save the portrait to `public/images/aiman-ghaffar.jpg`.
+2. In `src/sections/TeacherSection.tsx`, update the medallion `<img>` source:
    ```tsx
    <img
      src="/images/aiman-ghaffar.jpg"
