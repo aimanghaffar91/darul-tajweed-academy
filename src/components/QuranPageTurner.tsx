@@ -1,56 +1,32 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Play, Pause, Sparkles, BookOpen } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Play, Pause, BookOpen } from 'lucide-react'
 
 interface PageSpread {
   id: number
   arabicNumeral: string
-  surahTitle: string
-  surahTitleArabic: string
-  chapterContext: string
-  verseArabic: string
-  verseTranslation: string
-  commentary: string
   image: string
-  folioTag: string
+  title: string
 }
 
 const spreads: PageSpread[] = [
   {
     id: 1,
     arabicNumeral: '١',
-    surahTitle: 'Surah Al-Fatiha',
-    surahTitleArabic: 'سُورَةُ الْفَاتِحَةِ',
-    chapterContext: 'The Opening • Umm al-Kitab',
-    verseArabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ',
-    verseTranslation: 'In the name of Allah, the Entirely Merciful, the Especially Merciful. All praise is due to Allah, Lord of the worlds — the Entirely Merciful, the Especially Merciful, Sovereign of the Day of Recompense.',
-    commentary: 'The foundation of the Quran, recited in every unit of prayer, illuminating the soul with divine praise and guidance.',
-    image: '/images/hero-bg.jpg',
-    folioTag: 'FOLIO I • THE SACRED OPENING',
+    image: '/images/quran-spread-1.jpg',
+    title: 'Surah Al-Fatiha',
   },
   {
     id: 2,
     arabicNumeral: '٢',
-    surahTitle: 'The First Revelation',
-    surahTitleArabic: 'سُورَةُ الْعَلَقِ',
-    chapterContext: 'Surah Al-Alaq • The Command to Read',
-    verseArabic: 'اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ۝ اقْرَأْ وَرَبُّكَ الْأَكْرَمُ ۝ الَّذِي عَلَّمَ بِالْقَلَمِ',
-    verseTranslation: 'Read in the name of your Lord who created — created man from a clinging substance. Read, and your Lord is the Most Generous, who taught by the pen.',
-    commentary: 'The very first divine words revealed to Prophet Muhammad ﷺ on the Mountain of Light, beginning the era of Quranic knowledge.',
-    image: '/images/quran-pages.jpg',
-    folioTag: 'FOLIO II • DIVINE REVELATION',
+    image: '/images/quran-spread-2.jpg',
+    title: 'Online Quran Learning',
   },
   {
     id: 3,
     arabicNumeral: '٣',
-    surahTitle: 'The Art of Tajweed',
-    surahTitleArabic: 'سُورَةُ الْمُزَّمِّلِ',
-    chapterContext: 'Surah Al-Muzzammil • Measured Recitation',
-    verseArabic: 'وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا ۝ إِنَّا سَنُلْقِي عَلَيْكَ قَوْلًا ثَقِيلًا ۝ إِنَّ نَاشِئَةَ اللَّيْلِ هِيَ أَشَدُّ وَطْئًا وَأَقْوَمُ قِيلًا',
-    verseTranslation: 'And recite the Quran with measured, distinct recitation. Indeed, We will cast upon you a heavy word. Indeed, the hours of the night are more potent for devotion.',
-    commentary: 'The sacred divine command establishing the science of Tajweed — reciting each letter with clarity, reverence, and perfection.',
-    image: '/images/tajweed-art.jpg',
-    folioTag: 'FOLIO III • SACRED MELODY',
+    image: '/images/quran-spread-3.jpg',
+    title: 'Sacred Quranic Guidance',
   },
 ]
 
@@ -127,7 +103,7 @@ export default function QuranPageTurner() {
   const nextSpread = spreads[(currentSpread + 1) % spreads.length]
 
   return (
-    <div className="relative w-full max-w-xl mx-auto select-none">
+    <div className="relative w-full max-w-md sm:max-w-lg mx-auto select-none">
       {/* Ambient Spiritual Illumination Halo */}
       <div className="absolute -inset-8 rounded-full bg-gradient-to-tr from-[#B89545]/20 via-[#D4AF37]/10 to-transparent blur-3xl pointer-events-none -z-10 animate-pulse" />
 
@@ -140,129 +116,65 @@ export default function QuranPageTurner() {
         title="Click to turn page"
       >
         {/* Ornate Hardcover Bevel (Leather binding with gold foil emboss) */}
-        <div className="relative p-3 sm:p-4 rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-[#B89545] via-[#8C6E2D] to-[#042318] shadow-[0_30px_70px_rgba(0,0,0,0.7),0_0_50px_rgba(184,149,69,0.3)] border border-[#D4AF37]/60">
+        <div className="relative p-3 sm:p-4 rounded-[32px] sm:rounded-[36px] bg-gradient-to-b from-[#B89545] via-[#8C6E2D] to-[#042318] shadow-[0_30px_70px_rgba(0,0,0,0.7),0_0_50px_rgba(184,149,69,0.3)] border border-[#D4AF37]/60">
           
           {/* Inner Golden Book Box */}
-          <div className="relative rounded-[24px] sm:rounded-[32px] overflow-hidden bg-[#073B2A] border border-[#B89545]/50 shadow-inner">
+          <div className="relative rounded-[22px] sm:rounded-[28px] overflow-hidden bg-[#073B2A] border border-[#B89545]/50 shadow-inner">
 
-            {/* Top Folio Header Bar */}
-            <div className="absolute top-0 left-0 right-0 z-30 px-5 sm:px-6 py-3 bg-gradient-to-b from-[#042318]/90 via-[#042318]/60 to-transparent flex items-center justify-between pointer-events-none border-b border-[#B89545]/20">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#D8BD74]" />
-                <span className="text-[10px] sm:text-[11px] font-cinzel font-semibold text-[#D8BD74] uppercase tracking-widest">
-                  {spread.folioTag}
-                </span>
-              </div>
-              <div className="flex items-center gap-2 font-arabic text-sm sm:text-base text-[#D8BD74]">
-                <span>{spread.surahTitleArabic}</span>
-                <span className="font-bold text-[#073B2A] bg-gradient-to-r from-[#D4AF37] to-[#B89545] px-2 py-0.5 rounded-full text-xs shadow-sm font-sans">
-                  {spread.arabicNumeral}
-                </span>
-              </div>
-            </div>
-
-            {/* Two-Page Open Book Spread */}
-            <div className="relative w-full h-[320px] sm:h-[400px] md:h-[430px] flex overflow-hidden">
+            {/* Book Page Viewer with 3D Page Turn Animation (Pure Image, No Text Overlaid) */}
+            <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] overflow-hidden bg-[#073B2A]">
               
-              {/* Left Page (Verso: Context, Chapter Title & Sacred Translation) */}
-              <div className="relative w-1/2 h-full overflow-hidden border-r border-[#B89545]/35 bg-[#0B3024]">
+              {/* Underneath Layer (Revealed during flip) */}
+              <div className="absolute inset-0 w-full h-full">
                 <img
-                  src={spread.image}
-                  alt={spread.surahTitle}
-                  className="w-[200%] max-w-none h-full object-cover object-left filter brightness-[0.75] contrast-[1.05]"
+                  src={nextSpread.image}
+                  alt={nextSpread.title}
+                  className="w-full h-full object-cover object-center filter brightness-[0.7]"
                 />
-                
-                {/* Book Gutter Shadow (Spine curvature gradient) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/70 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/60 to-transparent pointer-events-none" />
-                
-                {/* Traditional Gilded Inner Frame Line (Jadwal) */}
-                <div className="absolute inset-2 sm:inset-3 border border-[#B89545]/40 rounded-lg pointer-events-none" />
-
-                {/* Left Page Calligraphic Editorial Overlay */}
-                <div className="absolute bottom-4 sm:bottom-5 left-3 sm:left-5 right-3 sm:right-5 z-20 text-left pointer-events-none">
-                  <span className="text-[9px] sm:text-xs font-cinzel text-[#D8BD74] tracking-widest block uppercase font-bold">
-                    {spread.chapterContext}
-                  </span>
-                  <h4 className="font-serif text-sm sm:text-lg text-[#FAF8F0] font-bold leading-tight mt-0.5">
-                    {spread.surahTitle}
-                  </h4>
-                  <p className="text-[10px] sm:text-xs text-[#FAF8F0]/85 font-serif italic line-clamp-3 sm:line-clamp-4 mt-1 leading-relaxed">
-                    "{spread.verseTranslation}"
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 pointer-events-none" />
               </div>
 
-              {/* Right Page (Recto: Active Turning Sheet with Illuminated Arabic) */}
-              <div className="relative w-1/2 h-full overflow-hidden bg-[#073B2A]">
-                
-                {/* Next Spread Preview Underneath (revealed as leaf turns) */}
-                <div className="absolute inset-0">
+              {/* Active Turning Page Leaf */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSpread}
+                  initial={{
+                    rotateY: direction === 'next' ? 45 : -45,
+                    opacity: 0.4,
+                    transformOrigin: 'left center',
+                  }}
+                  animate={{
+                    rotateY: 0,
+                    opacity: 1,
+                    transformOrigin: 'left center',
+                  }}
+                  exit={{
+                    rotateY: direction === 'next' ? -90 : 90,
+                    opacity: 0,
+                    transformOrigin: 'left center',
+                  }}
+                  transition={{
+                    duration: 0.65,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="absolute inset-0 w-full h-full shadow-2xl"
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
                   <img
-                    src={nextSpread.image}
-                    alt={nextSpread.surahTitle}
-                    className="w-[200%] max-w-none h-full object-cover object-right -translate-x-1/2 filter brightness-[0.6]"
+                    src={spread.image}
+                    alt={spread.title}
+                    className="w-full h-full object-cover object-center filter brightness-[0.98] contrast-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/70 pointer-events-none" />
-                </div>
 
-                {/* Active Turning Right Leaf */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSpread}
-                    initial={{
-                      rotateY: direction === 'next' ? 45 : -45,
-                      opacity: 0.5,
-                      transformOrigin: 'left center',
-                    }}
-                    animate={{
-                      rotateY: 0,
-                      opacity: 1,
-                      transformOrigin: 'left center',
-                    }}
-                    exit={{
-                      rotateY: direction === 'next' ? -90 : 90,
-                      opacity: 0,
-                      transformOrigin: 'left center',
-                    }}
-                    transition={{
-                      duration: 0.65,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="absolute inset-0 w-full h-full shadow-2xl"
-                    style={{ transformStyle: 'preserve-3d' }}
-                  >
-                    <img
-                      src={spread.image}
-                      alt={spread.surahTitle}
-                      className="w-[200%] max-w-none h-full object-cover object-right -translate-x-1/2 filter brightness-[0.85] contrast-[1.05]"
-                    />
-
-                    {/* Realistic Paper Curvature & Gutter Shadow */}
-                    <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/60 pointer-events-none" />
-                    <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
-
-                    {/* Gilded Edge Highlight */}
-                    <div className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-[#FAF8F0] via-[#D4AF37] to-[#FAF8F0] opacity-80" />
-
-                    {/* Traditional Inner Frame Line */}
-                    <div className="absolute inset-2 sm:inset-3 border border-[#B89545]/40 rounded-lg pointer-events-none" />
-
-                    {/* Right Page Authentic Arabic Script */}
-                    <div className="absolute bottom-4 sm:bottom-5 right-3 sm:right-5 left-3 sm:left-5 z-20 text-right pointer-events-none">
-                      <p className="font-arabic text-sm sm:text-lg md:text-xl text-[#D8BD74] drop-shadow-lg leading-relaxed dir-rtl" lang="ar">
-                        {spread.verseArabic}
-                      </p>
-                      <span className="text-[9px] sm:text-[10px] font-cinzel text-[#FAF8F0]/70 uppercase tracking-widest block mt-1.5">
-                        Darul Tajweed Academy • Islamabad
-                      </span>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+                  {/* Subtle Arch Framing and Edge Glint */}
+                  <div className="absolute inset-2 sm:inset-3 border border-[#B89545]/40 rounded-xl pointer-events-none" />
+                  <div className="absolute inset-y-0 right-0 w-1 bg-gradient-to-b from-[#FAF8F0] via-[#D4AF37] to-[#FAF8F0] opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10 pointer-events-none" />
+                </motion.div>
+              </AnimatePresence>
 
               {/* Central Spine Golden Bookmark Ribbon with Tassel */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center pointer-events-none">
+              <div className="absolute top-0 left-8 z-40 flex flex-col items-center pointer-events-none">
                 <div className="w-2.5 sm:w-3.5 h-16 sm:h-20 bg-gradient-to-b from-[#D4AF37] via-[#B89545] to-[#8C6E2D] shadow-lg rounded-b-sm border-x border-[#FAF8F0]/30" />
                 <div className="w-1.5 h-3 bg-[#B89545] rounded-full shadow" />
                 <div className="w-0.5 h-4 bg-[#D4AF37]" />
@@ -272,7 +184,7 @@ export default function QuranPageTurner() {
               {isFlipping && (
                 <motion.div
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: [0, 0.45, 0] }}
+                  animate={{ opacity: [0, 0.5, 0] }}
                   transition={{ duration: 0.65 }}
                   className="absolute inset-0 bg-black/40 pointer-events-none z-30"
                 />
